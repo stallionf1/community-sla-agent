@@ -1,17 +1,9 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.communityslaagent.services;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-/**
- *
- * @author Stallionf1
- */
 public class PropertiesService {
 
     private static PropertiesService ps = null;

@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.communityslaagent.services;
 
 import java.io.BufferedWriter;
@@ -13,10 +9,6 @@ import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.charset.Charset;
 
-/**
- *
- * @author Stallionf1
- */
 public class FileService {
 
     public FileService() {

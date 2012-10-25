@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.communityslaagent.services;
 
 import com.communityslaagent.database.DatabaseService;
@@ -16,10 +12,6 @@ import java.util.LinkedList;
 import java.util.StringTokenizer;
 import java.util.concurrent.TimeUnit;
 
-/**
- *
- * @author Stallionf1
- */
 public class SlaService {
 
     LinkedList<String> supportTeamEmails, supportManagementEmails;
