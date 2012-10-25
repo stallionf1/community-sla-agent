@@ -11,11 +11,15 @@ import javax.mail.internet.MimeMessage;
 
 public class MailService {
 
-    private static MailService ms = new MailService();
+    private static MailService ms = null;
+
+    public MailService() {
+        ms = new MailService();
+    }
     
     public void sendEmail(String mailToAddress, String subject, String messageText) {
         
-        Properties props = PropertiesService.getProperties();
+        Properties props = PropertiesService.getInstance().getProperties();
         String host = props.getProperty("smtp.host"), 
                 username = props.getProperty("smtp.username"), 
                 password = props.getProperty("smtp.password"), 
@@ -52,7 +56,10 @@ public class MailService {
         }
     }
 
-    public static MailService getMs() {
+    public static MailService getInstance() {
+        if (ms == null){
+            new MailService();
+        }
         return ms;
     }
     

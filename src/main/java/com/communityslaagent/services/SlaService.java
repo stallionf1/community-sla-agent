@@ -76,7 +76,7 @@ public class SlaService {
             SimpleDateFormat format = new SimpleDateFormat(DATE_DAILY_PATTERN);
             String subSubject = format.format(date).toString();
             String subject = ""+subSubject+" Community \\ SLA Notification \\ All Unanswered Topics";
-            MailService ms = MailService.getMs();
+            MailService ms = MailService.getInstance();
             for (String mailToAddress : supportTeamEmails) {
                 System.out.println(subject);
                 ms.sendEmail(mailToAddress, subject, sb.toString());
@@ -132,7 +132,7 @@ public class SlaService {
             fs.createFile(fileName, sb);
 
             //sending email
-            MailService ms = MailService.getMs();
+            MailService ms = MailService.getInstance();
             SimpleDateFormat format = new SimpleDateFormat(DATE_HOURLY_PATTERN);
             String subSubject = format.format(date).toString();
             String subject = subSubject + " Community \\ Hourly SLA Notification";
@@ -194,7 +194,7 @@ public class SlaService {
 
             //sending by email id RED ones exist
             if (count != 0) {
-                MailService ms = MailService.getMs();
+                MailService ms = MailService.getInstance();
                 for (String mailToAddress : supportTeamEmails) {
                     ms.sendEmail(mailToAddress, "Community \\ Topics in [RED]", sb.toString());
                 }
@@ -254,7 +254,7 @@ public class SlaService {
 
             //sending by email id Yellow ones exist
             if (count != 0) {
-                MailService ms = MailService.getMs();
+                MailService ms = MailService.getInstance();
                 for (String mailToAddress : supportTeamEmails) {
                     ms.sendEmail(mailToAddress, "Community \\ Topics in [Yellow]", sb.toString());
                 }                
@@ -290,7 +290,7 @@ public class SlaService {
 
     public static int getTimeDiffWithCurrentTime(Long last_post_time) {
 
-        Date dateOne, dateTwo;
+        Date dateOne;
         String diff = "";
         Timestamp last_post = new Timestamp(last_post_time);
         Date current_date = new Date();
