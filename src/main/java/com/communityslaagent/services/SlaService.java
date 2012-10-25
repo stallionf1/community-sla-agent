@@ -77,6 +77,7 @@ public class SlaService {
             String subSubject = format.format(date).toString();
             String subject = ""+subSubject+" Community \\ SLA Notification \\ All Unanswered Topics";
             MailService ms = MailService.getInstance();
+            System.out.println("ms = "+ms);
             for (String mailToAddress : supportTeamEmails) {
                 System.out.println(subject);
                 ms.sendEmail(mailToAddress, subject, sb.toString());

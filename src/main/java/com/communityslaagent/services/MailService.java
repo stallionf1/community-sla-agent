@@ -11,11 +11,9 @@ import javax.mail.internet.MimeMessage;
 
 public class MailService {
 
-    private static MailService ms = null;
+    private static MailService ms = new MailService();
 
-    public MailService() {
-        ms = new MailService();
-    }
+    public MailService() {}
     
     public void sendEmail(String mailToAddress, String subject, String messageText) {
         
